@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnHub</title><link rel="stylesheet" href="/style.css"></head>
+<body><header><b>EarnHub</b><nav><button id="navLogin">Login</button><button id="navSignup">Sign up</button><button id="navLogout" hidden>Logout</button></nav></header>
+<main>
+<section id="auth"><div class="card" id="loginCard"><h1>Welcome back</h1><form id="login"><input name="email" type="email" placeholder="Email" required><input name="password" type="password" placeholder="Password" required><button>Login</button></form><p>New here? <a id="toSignup">Create an account</a></p></div>
+<div class="card" id="signupCard" hidden><h1>Create account</h1><form id="signup"><input name="name" placeholder="Full name" required><input name="email" type="email" placeholder="Email" required><input name="password" type="password" placeholder="Password (8+ characters)" minlength="8" required><button>Sign up</button></form><p>Already registered? <a id="toLogin">Login</a></p></div></section>
+<section id="app" hidden><div class="grid"><div class="card balance"><small>Available balance</small><h2 id="balance">0.00</h2><button id="earn">Complete demo task +1.00</button></div><div class="card"><h3>Withdraw</h3><form id="withdraw"><input name="amount" type="number" min="5" step=".01" placeholder="Amount" required><select name="method"><option>Bank transfer</option><option>Mobile money</option><option>Manual payout</option></select><input name="account" placeholder="Account / wallet details" required><button>Request withdrawal</button></form><small>Withdrawals are queued for admin approval in this version.</small></div></div>
+<div class="card"><h3>Earnings</h3><div id="earnings"></div></div><div class="card"><h3>Withdrawals</h3><div id="withdrawals"></div></div><div id="admin" hidden class="card"><h2>Admin dashboard</h2><div id="stats"></div><h3>Withdrawal requests</h3><div id="adminWithdrawals"></div></div></section></main>
+<div id="msg"></div><script src="/app.js"></script></body></html>
