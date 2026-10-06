@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: earnhub
+    runtime: docker
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+    disk:
+      name: earnhub-data
+      mountPath: /app
+      sizeGB: 1
